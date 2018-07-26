@@ -64,8 +64,11 @@ module.exports={
             //获取前台页面传过来的参数
             /*var param=req.query||req.params;*/
             var param=req.body;
+            console.log(param);
             //建立连接，查询表格
             connection.query($sql.queryById,[param.phonenum2,param.password2],function(err,result){
+                console.log(err);
+                console.log(result);
                 if(result.length!=0){
                     result={
                         code:200,

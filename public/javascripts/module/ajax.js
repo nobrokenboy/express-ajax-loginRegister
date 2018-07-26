@@ -4,7 +4,7 @@
 window.ajax=(function(){
     var ajax={};
     ajax.requestWithRespond=function(options){
-        debugger;
+
         //创建XMLHttpRequest
         var xmlHttp;
         options=options||{};
@@ -26,11 +26,11 @@ window.ajax=(function(){
 
         //连接
         if(options.type=="get"){
-            debugger;
+
             xmlHttp.open(options.type,options.url+"?"+params,options.isAsync);
             xmlHttp.send(null);
         }else if(options.type="post"){
-            debugger;
+
             xmlHttp.open(options.type,options.url,options.isAsync);
             xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
             xmlHttp.send(params);
@@ -39,7 +39,7 @@ window.ajax=(function(){
         xmlHttp.onreadystatechange=recieveData;//这里接收的是句柄
 
         function recieveData(){
-            debugger;
+
             if(xmlHttp.readyState==4&&xmlHttp.status==200){
                 //responeseText是string类型
                 options.success(xmlHttp.responseText,xmlHttp.responseXML);
@@ -51,7 +51,7 @@ window.ajax=(function(){
     };
 
     ajax.formatData= function (data) {
-        debugger;
+
         var arr=[];
         for(var i in data){
             //encodeURIComponent对URI组件进行编码，解析成字符串
